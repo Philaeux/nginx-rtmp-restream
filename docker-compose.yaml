@@ -6,8 +6,5 @@ services:
     restart: always
 
     ports:
-      - "19996:1935"
-      - "19995:8080"
-
-    network_mode: "host"
+      - "1935:1935"
 

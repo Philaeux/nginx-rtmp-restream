@@ -1,3 +1,6 @@
-FROM tiangolo/nginx-rtmp
+FROM debian:latest
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+RUN apt-get update && apt-get install -y nginx libnginx-mod-rtmp
+COPY nginx.conf /etc/nginx/nginx.conf
+STOPSIGNAL SIGTERM
+CMD ["nginx", "-g", "daemon off;"]
