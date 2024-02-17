@@ -1,0 +1,13 @@
+version: '3'
+services:
+  restream:
+    image: restream
+    build: .
+    restart: always
+
+    ports:
+      - "19996:1935"
+      - "19995:8080"
+
+    network_mode: "host"
+
